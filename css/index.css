@@ -1,0 +1,987 @@
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #hero-81 {
+    /* Centers button */
+    text-align: center;
+    /* 144px - 300px - leaving extra space for the navigation */
+    padding: clamp(9rem, 25.95vw, 18.75rem) 1rem 0;
+    /* 130px - 450px */
+    padding-bottom: clamp(12.125rem, 30.95vw, 28.125rem);
+    position: relative;
+    z-index: 1;
+    /* Prevents white rectangle pseudos from overlapping the sections below */
+    overflow: hidden;
+  }
+  #hero-81:before {
+    /* Left side of the triangle */
+    content: '';
+    width: 31.25rem;
+    /* make really long so it covers the whole screen all the way to desktop */
+    height: 250rem;
+    background: #fff;
+    opacity: 1;
+    transform: rotate(-67deg);
+    transform-origin: center;
+    position: absolute;
+    display: block;
+    bottom: -139.6875rem;
+    /* this makes the right edge sit at the 50% line at all times */
+    right: 50%;
+    z-index: 0;
+  }
+  #hero-81:after {
+    /* Right side of the triangle */
+    content: '';
+    width: 31.25rem;
+    height: 250rem;
+    background: #fff;
+    opacity: 1;
+    transform: rotate(67deg);
+    transform-origin: center;
+    position: absolute;
+    display: block;
+    bottom: -139.6875rem;
+    /* this makes the left edge sit at the 50% line at all times */
+    left: 50%;
+    z-index: 0;
+  }
+  #hero-81 .cs-background {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+  #hero-81 .cs-background:before {
+    /* Overlay */
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .7;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* prevents the cursor from interacting with it */
+    pointer-events: none;
+  }
+  #hero-81 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  #hero-81 .cs-container {
+    width: 100%;
+    max-width: 67.5rem;
+    margin: auto;
+  }
+  #hero-81 .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 51.8125rem;
+    /* 16px - 24px */
+    margin: 0 auto clamp(1rem, 4vw, 1.5rem);
+    color: #fff;
+    position: relative;
+  }
+  #hero-81 .cs-title:after {
+    /* Divider Line */
+    content: '';
+    /* 60px - 100px */
+    width: clamp(3.75rem, 9.5vw, 6.25rem);
+    /* 4px - 8px */
+    height: clamp(0.25rem, 0.8vw, 0.5rem);
+    /* 16px - 24px */
+    margin: clamp(1rem, 4vw, 1.5rem) auto clamp(1rem, 4vw, 1.5rem);
+    background: var(--primary);
+    opacity: 1;
+    position: relative;
+    display: block;
+  }
+  #hero-81 .cs-text {
+    /* 16px - 25px */
+    font-size: clamp(1rem, 1.95vw, 1.5625rem);
+    line-height: 1.5em;
+    text-align: center;
+    width: 100%;
+    /* 464px - 800px */
+    max-width: clamp(29rem, 60vw, 50rem);
+    margin: 0 auto;
+    /* 40px - 48px */
+    margin-bottom: clamp(2.5rem, 4vw, 3rem);
+    color: #fff;
+  }
+}
+/* Desktop - 1300px (To make image background parallax) */
+@media only screen and (min-width: 81.25rem) {
+  #hero-81 {
+    background: url("https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* makes the parallax effect */
+    background-attachment: fixed;
+  }
+  #hero-81 .cs-background img {
+    display: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #hero-81:before,
+  body.dark-mode #hero-81:after {
+    background: var(--dark);
+  }
+  body.dark-mode #hero-81 .cs-background:before {
+    opacity: .85;
+  }
+}
+/*-- -------------------------- -->
+<---         Services           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #h-services-81 {
+    /* 40px - 100px */
+    padding: 0 1rem clamp(2.5rem, 7.9vw, 6.25rem) 1rem;
+    position: relative;
+    /* give a higher z index than the hero so it can sit on top */
+    z-index: 10;
+  }
+  #h-services-81 .cs-card-group {
+    width: 100%;
+    max-width: 29.0625rem;
+    margin: 0 auto 0;
+    /* negative margin pulls it up on top of the hero section */
+    /* -46px to -76px - we're calculating whatever clamp is and multiplying by -1
+            to make the value negative since clamp doesn't work with negative values */
+    margin-top: calc(clamp(5rem, 13vw, 4.75rem)*-1);
+    /* 40px - 60px top and bottom, 16px - 60px left & right */
+    padding: clamp(2.5rem, 4.7vw, 3.75rem) clamp(1rem, 4vw, 3.75rem);
+    box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.05);
+    border-top: 8px solid var(--primary);
+    background-color: #fff;
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+  }
+  #h-services-81 .cs-item {
+    list-style: none;
+    margin: 0 auto 2.5rem;
+    width: 100%;
+    max-width: 22.5rem;
+  }
+  #h-services-81 .cs-item:last-of-type {
+    margin-bottom: 0;
+  }
+  #h-services-81 .cs-icon {
+    /* 68px - 88px */
+    width: clamp(4.25rem, 8.8vw, 5.5rem);
+    /* 68px - 88px */
+    height: clamp(4.25rem, 8.8vw, 5.5rem);
+    margin: auto;
+    /* 20px - 24px */
+    margin-bottom: clamp(1.25rem, 5vw, 1.5rem);
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #h-services-81 .cs-icon img {
+    /* 44px - 52px */
+    width: clamp(2.75rem, 5.8vw, 3.25rem);
+    height: auto;
+  }
+  #h-services-81 .cs-title {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 0.5rem;
+    color: var(--headerColor);
+  }
+  #h-services-81 .cs-text {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5em;
+    max-width: 22.5rem;
+    margin: 0 auto;
+    color: var(--bodyTextColor);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #h-services-81 {
+    padding-bottom: 0;
+  }
+  #h-services-81 .cs-card-group {
+    max-width: 80rem;
+    /* -76px to -320px - we're calculating whatever clamp is and multiplying by -1
+               to make the value negative since clamp doesn't work with negative values */
+    margin-top: calc(clamp(4.75rem, 20vw, 20rem)*-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 2.5rem;
+  }
+  #h-services-81 .cs-item {
+    /* Reset margin so it doesn't interfere with flexbox */
+    margin: 0;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #h-services-81 .cs-card-group {
+    background: var(--medium);
+  }
+  body.dark-mode #h-services-81 .cs-icon {
+    background: var(--darkTint);
+  }
+  body.dark-mode #h-services-81 .cs-title {
+    color: #fff;
+  }
+  body.dark-mode #h-services-81 .cs-text {
+    color: #fff;
+  }
+}
+/*-- -------------------------- -->
+<---          About Us          -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #RPsbs-580 .cs-container,
+  #RPsbsr-580 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 7vw, 4rem);
+  }
+  #RPsbs-580 .cs-content,
+  #RPsbsr-580 .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
+    padding: var(--sectionPadding);
+    padding-top: 0;
+    /* prevents padding from affecting width and height */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #RPsbs-580 .cs-text,
+  #RPsbsr-580 .cs-text {
+    /* Override. */
+    margin-bottom: 1rem;
+  }
+  #RPsbs-580 .cs-text:last-of-type,
+  #RPsbsr-580 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #RPsbs-580 .cs-picture,
+  #RPsbsr-580 .cs-picture {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 18.75rem;
+  }
+  #RPsbs-580 .cs-picture img,
+  #RPsbsr-580 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #RPsbs-580,
+  #RPsbsr-580 {
+    padding: var(--sectionPadding);
+  }
+  #RPsbs-580 .cs-container,
+  #RPsbsr-580 .cs-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    /* 60px - 128px */
+    gap: clamp(3.75rem, 10vw, 8rem);
+  }
+  #RPsbs-580 .cs-content,
+  #RPsbsr-580 .cs-content {
+    width: 53%;
+    /* reset the padding, add the section padding back to the section container */
+    padding: 0;
+  }
+  #RPsbs-580 .cs-picture,
+  #RPsbsr-580 .cs-picture {
+    width: 47vw;
+    max-width: 30.875rem;
+    /* 518px - 700px */
+    height: clamp(32.375rem, 63vw, 43.75rem);
+    /* 16px - 28px, added margin left and bottom to cs-picture so it pushes away by the same amount the yellow box element overlaps it left and bottom. This maintains consistent spacing left and bottom */
+    margin: 0 0 clamp(1rem, 2.4vw, 1.75rem) clamp(1rem, 2.4vw, 1.75rem);
+    position: relative;
+  }
+  #RPsbs-580 .cs-picture:before,
+  #RPsbsr-580 .cs-picture:before {
+    /* yellow box */
+    content: '';
+    width: 50%;
+    height: 60%;
+    background: var(--secondary);
+    opacity: 1;
+    display: block;
+    position: absolute;
+    /* 16px - 28px, wrapped in calc function to multiple by negative 1 and get a negative clamp value */
+    bottom: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
+    left: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
+  }
+}
+/*-- -------------------------- -->
+<---     Service Highlight      -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #RPsbsr-580 {
+    background-color: #f7f7f7;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #RPsbsr-580 .cs-container {
+    justify-content: flex-end;
+  }
+  #RPsbsr-580 .cs-content {
+    /* sends it to the left in the first position */
+    order: -1;
+  }
+  #RPsbsr-580 .cs-picture {
+    /* 16px - 28px, added margin left and bottom to cs-picture so it pushes away by the same amount the yellow box element overlaps it left and bottom. This maintains consistent spacing left and bottom */
+    margin: 0 clamp(1rem, 2.4vw, 1.75rem) clamp(1rem, 2.4vw, 1.75rem) 0;
+  }
+  #RPsbsr-580 .cs-picture:before {
+    /* yellow box */
+    content: '';
+    width: 50%;
+    height: 60%;
+    background: var(--secondary);
+    opacity: 1;
+    display: block;
+    position: absolute;
+    left: auto;
+    /* 16px - 28px, wrapped in calc function to multiple by negative 1 and get a negative clamp value */
+    bottom: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
+    right: calc(clamp(1rem, 2.4vw, 1.75rem)*-1);
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #RPsbsr-580 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-453 {
+    /* centers the inline-block button */
+    text-align: center;
+    padding: var(--sectionPadding);
+  }
+  #gallery-453 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+  }
+  #gallery-453 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #gallery-453 .cs-button-group {
+    width: 100%;
+    max-width: 37.5rem;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    column-gap: 1.5rem;
+  }
+  #gallery-453 .cs-button {
+    font-size: 1rem;
+    line-height: 1.5em;
+    padding: 0 0 0 1rem;
+    color: var(--bodyTextColor);
+    background-color: transparent;
+    border: none;
+    position: relative;
+    transition: color .3s;
+  }
+  #gallery-453 .cs-button:before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--primary);
+    /* starting value, this will animate to 1 when the button is hovered, and when the active class is on it */
+    opacity: 0;
+    /* prevents mouse from interacting with it */
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    top: 50%;
+    /* start -20px left of the button */
+    left: -1.25rem;
+    transform: translateY(-50%);
+    /* transition to and from the active class styles on hover*/
+    transition: opacity .3s, left .3s;
+  }
+  #gallery-453 .cs-button:hover {
+    color: var(--primary);
+    cursor: pointer;
+  }
+  #gallery-453 .cs-button:hover:before {
+    left: 0;
+    opacity: 1;
+  }
+  #gallery-453 .cs-button.cs-active {
+    /* when the button is active, add these styles to the button and its pseudo */
+    font-weight: 700;
+    color: var(--primary);
+  }
+  #gallery-453 .cs-button.cs-active:before {
+    /* animate to these values when the cs-active class is added to the button and on hover */
+    left: 0;
+    opacity: 1;
+  }
+  #gallery-453 .cs-gallery {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* 48px - 64px */
+    margin-bottom: clamp(3rem, 3vw, 4rem);
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    left: 0;
+    /* 16px - 20px */
+    gap: clamp(1rem, 1vw, 1.25rem);
+    transition: transform .7s, opacity .3s, visibility .5s, top .3s, left .3s;
+    /* makes the transfrom scaling orgin the top left corner, dictates the direction by which the scale transforms animate towards */
+    transform-origin: left top;
+  }
+  #gallery-453 .cs-gallery.cs-hidden {
+    /* by using visibility:hidden instead of display:none, we can see the animations from the opacity and transforms, display:none won't render animations. */
+    visibility: hidden;
+    /* prevents the mouse from interacting with it */
+    pointer-events: none;
+    /* hidden galleries have a 0 opacity, and we animate the opacity to 1 when they become active */
+    opacity: 0;
+    /* this top and left value help control the animation, by setting it to position absolute and left 0, the gallery won't fly off screen to the left, it will stop its position to be at the left edge of the .cs-container (left: 0). Same for the bottom:0 value, the gallery won't go past that posiiton when it animates */
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    /* prevents the hidden galleries from overflowing the section, and makes a nice animations to transition to and from */
+    transform: scaleY(0) scaleX(0);
+  }
+  #gallery-453 .cs-gallery.cs-hidden .cs-image {
+    /* when gallery is hidden, add these styles to the cs-image to animate from when cs-hidden is removed from the .cs-gallery */
+    transform: translateY(2.1875rem);
+    opacity: 0;
+  }
+  #gallery-453 .cs-image {
+    width: clamp(47%, 42.5vw, 48.5%);
+    /* changes at tablet */
+    aspect-ratio: 0.72985782;
+    /* clips the image corners */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    /* when .cs-hidden is removed from the .cs-gallery, reset these values and animate from their hidden styles */
+    transform: translateY(0rem);
+    opacity: 1;
+    transition: opacity .6s, transform .6s;
+  }
+  #gallery-453 .cs-image:nth-of-type(1) {
+    /* these delays stagger the reveal of each image so they all go one after the other and not all at once */
+    transition-delay: .15s;
+  }
+  #gallery-453 .cs-image:nth-of-type(2) {
+    transition-delay: .3s;
+  }
+  #gallery-453 .cs-image:nth-of-type(3) {
+    transition-delay: .45s;
+  }
+  #gallery-453 .cs-image:nth-of-type(4) {
+    transition-delay: .6s;
+  }
+  #gallery-453 .cs-image:nth-of-type(5) {
+    transition-delay: .75s;
+  }
+  #gallery-453 .cs-image:nth-of-type(6) {
+    transition-delay: .9s;
+  }
+  #gallery-453 .cs-image:nth-of-type(7) {
+    transition-delay: 1.05s;
+  }
+  #gallery-453 .cs-image:nth-of-type(8) {
+    transition-delay: 1.20s;
+  }
+  #gallery-453 .cs-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes it act like a background image */
+    object-fit: cover;
+  }
+}
+/* Tablet - 600px */
+@media only screen and (min-width: 48rem) {
+  #gallery-453 .cs-container {
+    max-width: 80rem;
+  }
+  #gallery-453 .cs-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  #gallery-453 .cs-flex {
+    width: 50%;
+  }
+  #gallery-453 .cs-title {
+    margin: 0;
+  }
+  #gallery-453 .cs-button-group {
+    width: auto;
+  }
+  #gallery-453 .cs-gallery {
+    justify-content: space-between;
+  }
+  #gallery-453 .cs-image {
+    /* 171px - 305px */
+    width: clamp(10.6875rem, 23.3%, 19.0625rem);
+    aspect-ratio: 0.71529412;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #gallery-453 .cs-title,
+  body.dark-mode #gallery-453 .cs-text,
+  body.dark-mode #gallery-453 .cs-button {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #gallery-453 .cs-title.cs-active,
+  body.dark-mode #gallery-453 .cs-text.cs-active,
+  body.dark-mode #gallery-453 .cs-button.cs-active {
+    color: var(--secondary);
+  }
+}
+/*-- -------------------------- -->
+<---       Meet The Team        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #meet-team-221 {
+    padding: var(--sectionPadding);
+    background: #F1F1F4;
+  }
+  #meet-team-221 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #meet-team-221 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #meet-team-221 .cs-picture {
+    /* 160px - 220px */
+    width: clamp(10rem, 20vw, 13.75rem);
+    height: clamp(10rem, 20vw, 13.75rem);
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    /* clips the corners off the image tag */
+    overflow: hidden;
+  }
+  #meet-team-221 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* Makes image behave like a background image */
+    object-fit: cover;
+    transition: transform .7s;
+  }
+  #meet-team-221 .cs-card-group {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  #meet-team-221 .cs-item {
+    list-style: none;
+    /* Changes on tablet */
+    width: 100%;
+    max-width: 21.25rem;
+    /* 16px - 20px */
+    padding: clamp(1rem, 2vw, 1.25rem);
+    padding-bottom: 1.25rem;
+    background: var(--bodyTextColorWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+  }
+  #meet-team-221 .cs-item:hover .cs-picture img {
+    transform: scale(1.1);
+  }
+  #meet-team-221 .cs-name {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--headerColor);
+    display: block;
+  }
+  #meet-team-221 .cs-job-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+    display: block;
+  }
+  #meet-team-221 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    color: #7D799C;
+  }
+  #meet-team-221 .cs-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  #meet-team-221 .cs-link {
+    /* 28px - 32px */
+    width: clamp(1.75rem, 3vw, 2rem);
+    /* 28px - 32px */
+    height: clamp(1.75rem, 3vw, 2rem);
+    /* After making the a tag into a box, we center the image inside of it */
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* creates the 3D space for the 3D effect when spinning */
+    transform-style: preserve-3d;
+    perspective: 700px;
+  }
+  #meet-team-221 .cs-link:hover .cs-icon {
+    transform: translateY(-0.3125rem) rotateY(360deg);
+  }
+  #meet-team-221 .cs-icon {
+    width: 0.875rem;
+    height: auto;
+    transition: transform .7s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #meet-team-221 .cs-container {
+    max-width: 80em;
+  }
+  #meet-team-221 .cs-card-group {
+    flex-direction: row;
+  }
+  #meet-team-221 .cs-item {
+    width: 31%;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #meet-team-221 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #meet-team-221 .cs-title,
+  body.dark-mode #meet-team-221 .cs-text,
+  body.dark-mode #meet-team-221 .cs-name,
+  body.dark-mode #meet-team-221 .cs-item-text,
+  body.dark-mode #meet-team-221 .cs-job-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #meet-team-221 .cs-item {
+    background-color: var(--medium);
+  }
+  body.dark-mode #meet-team-221 .cs-item-text {
+    opacity: .8;
+  }
+  body.dark-mode #meet-team-221 .cs-icon {
+    /* turns icons white */
+    filter: grayscale(1) brightness(1000%);
+  }
+}
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #reviews-727 {
+    padding: var(--sectionPadding);
+  }
+  #reviews-727 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #reviews-727 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #reviews-727 .cs-title {
+    /* cs-title override */
+    max-width: 20ch;
+  }
+  #reviews-727 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  #reviews-727 .cs-item {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    /* 32px - 48px top & bottom */
+    /* 16px - 32px left & right */
+    padding: clamp(2rem, 7vw, 3rem) clamp(1rem, 4vw, 2rem);
+    /* makes padding not affect height and width */
+    box-sizing: border-box;
+    background-color: #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #reviews-727 .cs-icon {
+    /* 30px - 40px */
+    width: clamp(1.875rem, 4vw, 2.5rem);
+    height: auto;
+    margin: 0 0 2rem 0;
+    display: block;
+  }
+  #reviews-727 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 4vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    color: var(--headerColor);
+  }
+  #reviews-727 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 4vw, 1rem);
+    line-height: 1.5em;
+    margin: 0 0 3rem 0;
+    color: var(--bodyTextColor);
+  }
+  #reviews-727 .cs-name {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: auto 0 0 0;
+    color: var(--headerColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+  }
+  #reviews-727 .cs-name:before {
+    content: '';
+    width: 0.5rem;
+    height: 1px;
+    background: currentColor;
+    display: block;
+    position: relative;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #reviews-727 .cs-container {
+    max-width: 80rem;
+  }
+  #reviews-727 .cs-card-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #reviews-727 .cs-item {
+    width: 48.5%;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #reviews-727 .cs-title,
+  body.dark-mode #reviews-727 .cs-text,
+  body.dark-mode #reviews-727 .cs-h3,
+  body.dark-mode #reviews-727 .cs-item-text,
+  body.dark-mode #reviews-727 .cs-name {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #reviews-727 .cs-text {
+    opacity: .8;
+  }
+  body.dark-mode #reviews-727 .cs-item {
+    background-color: var(--medium);
+  }
+}
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-51 {
+    padding: var(--sectionPadding);
+    position: relative;
+  }
+  #cta-51 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #cta-51 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #cta-51 .cs-topper {
+    color: var(--secondary);
+  }
+  #cta-51 .cs-title,
+  #cta-51 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  #cta-51 .cs-text {
+    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
+    margin-bottom: 1rem;
+    opacity: .8;
+  }
+  #cta-51 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #cta-51 .cs-picture {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #cta-51 .cs-picture:before {
+    /* black color overlay */
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: .8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #cta-51 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

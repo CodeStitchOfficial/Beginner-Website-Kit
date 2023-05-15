@@ -1,0 +1,64 @@
+/* Add this as it's own dark.css file and linked on all pages */
+
+/*-- -------------------------- -->
+<---      Core Dark Styles      -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+
+  // Dark Mode Color Scheme
+  :root {
+      --dark: #121212;
+      --medium: #282828;
+      --accent: #404040;
+      --bodyTextColorWhite: #FAFBFC;
+  }
+
+  body.dark-mode {
+      background-color: var(--dark);
+
+      p, li, h1, h2, h3, h4, h5, h6, .cs-title, .cs-text, .cs-li {
+          color: var(--bodyTextColorWhite);
+      }
+
+      // hide all light classes
+      .light {
+          display: none;
+      }
+
+      // show all dark classes
+      .dark {
+          display: block !important;
+      }
+  }
+
+  .dark {
+      /* class used to hide elements that only need to be seen when dark mode is enabled */
+      display: none;
+  }
+}
+
+/*-- -------------------------- -->
+<---      Dark Mode Toggle      -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+
+  // Dark Mode Toggle Switch Animation
+  body.dark-mode {
+      #dark-mode-toggle {
+          .sun {
+              transform: translate(-50%, -50%);
+              opacity: 1;
+          }
+
+          .moon {
+              transform: translate(-50%, -150%);
+              opacity: 0;
+          }
+      }
+  }
+}
+                              
